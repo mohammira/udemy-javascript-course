@@ -13,9 +13,13 @@
 // console.log(y);
 // console.log(z);
 
-// exponent operator
-console.log(2 ** 4);
-// dividing numbers equals a decimal
-console.log(10/3, 69/10);
-// string concat
-console.log('My' + ' ' + 'Name');
+// // exponent operator
+// console.log(2 ** 4);
+// // dividing numbers equals a decimal
+// console.log(10/3, 69/10);
+// // string concat
+// console.log('My' + ' ' + 'Name');
+
+let x, y;
+x = y = 1+2+3+4+5;
+console.log(`x is ${x} and y is ${y}`);
