@@ -23,3 +23,12 @@
 let x, y;
 x = y = 1+2+3+4+5;
 console.log(`x is ${x} and y is ${y}`);
+
+// == and === comparison
+
+// === strict, doesn't do type coercion
+console.log(10 === 10); // true
+console.log(10 === '10'); // false
+// == loose, can dotype coercion
+console.log(10 == 10); // true
+console.log(10 == '10'); // true
