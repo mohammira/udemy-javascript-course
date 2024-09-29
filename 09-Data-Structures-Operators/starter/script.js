@@ -28,7 +28,6 @@ const restaurant = {
   },
 };
 
-// coding challenge 1
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -70,6 +69,7 @@ const game = {
   },
 };
 
+// coding challenge 1
 // #1
 const [players1, players2] = game.players;
 console.log(players1,players2);
@@ -96,3 +96,46 @@ printGoals(...game.scored);
 // #7
 team1 < team2 && console.log(`${game.team1} (Team 1) more likely to win`);
 team2 < team1 && console.log(`${game.team2} (Team 2) more likely to win`);
+
+// coding challenge 2
+// 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+for (const [i,player] of game.scored.entries()) {
+  console.log(`Goal ${i}: ${player}`);
+}
+
+// 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+let odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) {
+  average += odd;
+}
+console.log(`Average odd: ${average/odds.length}`);
+
+/*
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw").
+HINT: Note how the odds and the game objects have the same property names 😉
+*/
+for (const x of Object.keys(game.odds)) {
+  let team = x == 'x' ? "draw" : `victory ${game[x]}`;
+  console.log(`Odd of ${team}: ${game.odds[x]}`);
+}
+
+/*
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties,
+and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+*/
+
+let scorers = {};
+for (const y of game.scored) {
+  scorers[y] ? scorers[y]++ : (scorers[y] = 1);
+}
+console.log(scorers);
