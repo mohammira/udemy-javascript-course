@@ -41,3 +41,13 @@ poll.displayResults.call({answers: [5, 2, 3]}, 'string');
 // BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]});
 poll.displayResults.call({answers: [1, 5, 3, 9, 6, 1]}, 'string');
+
+// CHALLENGE #2
+(function () {
+    const header = document.querySelector('h1');
+    header.style.color = 'red';
+
+    document.querySelector('body').addEventListener('click', () => {
+        header.style.color = 'blue';
+    })
+})();
